@@ -17,7 +17,7 @@ type NavProfileProps = {
 	onClickMessage: () => void,
 }
 
-const NavProfile = ({username, userImage, onClickSettings, onClickLogOut, onClickProfile, onClickHome} : NavProfileProps) => {
+const NavProfile = ({username, userImage, onClickSettings, onClickLogOut, onClickProfile, onClickMessage} : NavProfileProps) => {
 	const [showMenu, setShowMenu] = React.useState(false);
 	return (
 		<>
