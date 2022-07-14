@@ -36,7 +36,7 @@ const Contact = ({contact, userImage} : ContactProps) => {
 	return (
 		<>
 			{/* On click go to profile */}
-			<div className='flex justify-between w-full h-[56px] rounded-[4px] bg-transparent hover:bg-slate-900 mb-[16px]'>
+			<div className='flex justify-between w-full h-[56px] rounded-[4px] bg-transparent hover:bg-slate-900 mb-[16px]  transition-all duration-300 ease-in-out'>
 				<ContactInfo contact={contact} userImage={userImage}/>
 				<div className='flex items-center'>
 					{/* { if user is online rende challenge buttong, else render FiEye Button  } */}

@@ -1,5 +1,6 @@
 // Hooks
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // Components
 import IconButton from '../commons/buttons/IconButton'
@@ -16,7 +17,7 @@ type FriendRequestInProps = {
 }
 
 const FriendRequestIn = ({username} :  FriendRequestInProps) => {
-
+	let navigate = useNavigate();
 	// Get user image: 
 	let userImage: string = defaultUserImage;
 	const global = useSelector((state: any) => state.global)
@@ -25,7 +26,8 @@ const FriendRequestIn = ({username} :  FriendRequestInProps) => {
 		<>
 			{/* On click go to profile */}
 			<div className='flex justify-between w-full h-[56px] rounded-[4px] bg-green-700/20 mb-[16px] border-green-500 border'>
-				<div className='flex items-center w-full h-full'>
+				<div className='flex items-center w-full h-full text-green-500 hover:text-slate-200 hover:cursor-pointer transition-all duration-300 ease-in-out'
+						onClick={() => {navigate('/app/user/' + username)}}>
 					{/* Fetch image */}
 					
 					<div className="border-2 border-green-500 rounded-full ml-[8px]">
@@ -33,7 +35,7 @@ const FriendRequestIn = ({username} :  FriendRequestInProps) => {
 					</div>
 					<div className="ml-[16px]">
 						<p className='absolute mt-[-8px] text-green-500 font-space text-[10px]'>added You</p>
-						<p className='font-space text-green-500 text-[20px]'>
+						<p className='font-space text-[20px]'>
 							{username}
 						</p>
 					</div>
